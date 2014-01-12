@@ -2,7 +2,7 @@
 . /usr/share/slax/slaxbuildlib
 
 SLAX_BUNDLE_NAME="electrum"
-SLAX_BUNDLE_VERSION="1.9.4"
+SLAX_BUNDLE_VERSION="1.9.7"
 SLAX_BUNDLE_DESCRIPTION="Electrum bitcoin client"
 SLAX_BUNDLE_CATEGORIES="network,utilities,security"
 SLAX_BUNDLES_REQUIRED="python pyqt"
@@ -21,7 +21,7 @@ check_variables_for_errors
 download_all_sources
 
 md5sum --check <<EOF
-c661b443ac52bb576282a43c6de3a890  Electrum-1.9.4.tar.gz
+5764f38d6e4bc287a577c8d16e797882  Electrum-1.9.7.tar.gz
 e95941b3bcbf1726472bb724d7478551  ecdsa-0.10.tar.gz
 eafee95a788a795403e972a35e80ce4f  slowaes-0.1a1.tar.gz
 EOF
@@ -39,9 +39,9 @@ patch -p0 <<EOF
  
 -from setuptools import setup
 +from distutils.core import setup
- import os, sys, platform, imp
- 
- version = imp.load_source('version', 'lib/version.py')
+ import os
+ import sys
+ import platform
 EOF
 
 cd ${SLAX_CURRENT_BUILDSCRIPT_DIR}/slowaes-$SLOWAES_VERSION
